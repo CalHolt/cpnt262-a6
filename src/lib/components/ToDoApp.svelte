@@ -4,7 +4,7 @@
   let userInput = "";
 
   // empty array for all of users inut tasks
-  let toDoList = [];
+  let toDoList = [{content: "Eat some food", editing: false, checked: false}, {content: "Watch sassy", editing: false, checked: false}, {content: "Watch sassy", editing: false, checked: false}];
 
   // create function to allow user to edit ToDo
   function setEditing(i, isEditing) {
