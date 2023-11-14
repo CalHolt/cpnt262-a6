@@ -30,14 +30,19 @@
   <h1 style="text-align: center;">To Do List</h1>
   <p>Add a Task:</p>
   <div class="input-area">
+    <!-- create input box for user input tasks -->
     <input type="text" bind:value={userInput}>
+    <!-- button with attached function to add task to list -->
     <Button on:toggle={addToDo} text= "Add"/>
   </div>
 </div>
 
 <!-- create display area with checkbox, edit and delete area -->
+
+<!-- Each loop to add more tasks once added -->
 {#each toDoList as toDo, i}
 <div style="display: flex; align-items: baseline; width: 700px; margin: 0 auto;">
+  <!-- create if statement to display text box if user is editing task -->
   {#if toDo.editing}
     <input type="text" bind:value={toDo.content}>
   {:else}
@@ -45,8 +50,10 @@
   <h3 style="flex-grow: 1;">{toDo.content}</h3>
   {/if}
   <div style="display: flex;">
+    <!-- Use if statement to show a save button if user is editing a task -->
     {#if toDo.editing}
     <Button on:toggle={() => setEditing(i, false)} text="Save"/>
+      <!-- if not editing task show edit button -->
     {:else}
     <Button on:toggle={() => setEditing(i, true)} text="Edit"/>
     {/if}    

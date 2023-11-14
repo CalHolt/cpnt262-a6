@@ -1,6 +1,9 @@
 <script>
+  // import event dispatcher
   import { createEventDispatcher } from "svelte";
+  // create variable for event dispatcher MAKE SURE TO PUT () AFTER CREATEEVENTDISPATCHER
   const dispatch = createEventDispatcher();
+  // Create function calling variable made for event dispatcher
   function click() {
 		dispatch('toggle', {});
 	}
